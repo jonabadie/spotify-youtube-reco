@@ -30,6 +30,7 @@ def nearest_songs(idx, df):
     res = np.delete(indices[idx], np.where(indices[idx] == idx))
     return res
 
+st.set_page_config(page_title='Song Recommender', layout="wide")
 st.title('Song Recommender')
 st.write('This is a simple song recommender built with Streamlit and Scikit-learn.')
 
