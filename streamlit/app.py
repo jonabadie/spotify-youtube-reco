@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_tags import st_tags
 import pandas as pd
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
