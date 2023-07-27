@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
 
@@ -23,10 +24,11 @@ def get_data():
 
 def nearest_songs(idx, df):
     df = preprocessing(df)
-    nbrs = NearestNeighbors(n_neighbors=5, algorithm='ball_tree')
+    nbrs = NearestNeighbors(n_neighbors=6, algorithm='ball_tree')
     nbrs = nbrs.fit(df)
     _, indices = nbrs.kneighbors(df)
-    return indices[idx]
+    res = np.delete(indices[idx], np.where(indices[idx] == idx))
+    return res
 
 st.title('Song Recommender')
 st.write('This is a simple song recommender built with Streamlit and Scikit-learn.')
