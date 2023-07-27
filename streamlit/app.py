@@ -32,7 +32,7 @@ def nearest_songs(idx, df):
 
 st.set_page_config(page_title='Song Recommender', layout='wide')
 st.title('Song Recommender')
-st.write('This is a simple song recommender built with Streamlit and Scikit-learn.')
+st.write('This is a simple song recommender built with Streamlit and Scikit-learn using k-nearest neighbors.')
 
 df = get_data()
 cols = st.columns(2)
